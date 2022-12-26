@@ -34,3 +34,7 @@ _Requests_ is an elegant and simple HTTP library.
 [5 Best Python Libraries for working with HTTP](https://www.yeahhub.com/5-best-python-libraries-working-http/)
 
 [The Best Python HTTP Clients For 2022](https://www.scrapingbee.com/blog/best-python-http-clients/)
+
+[Selenium WebDriver – How To Test REST API](https://www.vinsguru.com/selenium-webdriver-how-to-test-rest-api/)
+
+[Requests - HTTP library for Python](https://requests.readthedocs.io/en/latest/)
