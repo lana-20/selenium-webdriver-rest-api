@@ -14,7 +14,7 @@ I can include REST API related testing in my existing Selenium framework.
 I try to do the API level testing as much as possible, in order to minimize coverage for UI testing.
 
 ## REST API Testing:
-REST API testing is nrasonably manageable, compared to Selenium WebDriver UI testing. Most of the APIs are one of GET / POST / PUT / PATCH / DELETE requests.
+REST API testing is reasonably manageable, compared to Selenium WebDriver UI testing. Most of the APIs are one of GET / POST / PUT / PATCH / DELETE requests.
 
 - GET - get data/info from the backend to show in the UI
 - POST - add new info into the backend, crate a new record
@@ -22,7 +22,7 @@ REST API testing is nrasonably manageable, compared to Selenium WebDriver UI tes
 - PATCH - partial update
 - DELETE - delete/destroy the info from the backend
 
-I normally use a testing framework like Unittest (a.k.a. PyUnit) or PyTest, when conducting UI testing with Selenium. 
+I normally use a testing framework like [Unittest](https://docs.python.org/3/library/unittest.html) (a.k.a. PyUnit) or [PyTest](https://docs.pytest.org/en/7.2.x/), when conducting UI testing with Selenium. 
 I include APIs in the same framework for quick data setup, cleanup, assertions, etc.
 I use a popular Python [Requests](https://requests.readthedocs.io/en/latest/) module.
 _Requests_ is an elegant and simple HTTP library.
