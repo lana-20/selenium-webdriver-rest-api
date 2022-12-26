@@ -29,4 +29,8 @@ _Requests_ is an elegant and simple HTTP library.
 
 ![image](https://user-images.githubusercontent.com/70295997/209491718-81463589-bb41-41ca-af3b-f07709ee434e.png)
 
+----
 
+[5 Best Python Libraries for working with HTTP](https://www.yeahhub.com/5-best-python-libraries-working-http/)
+
+[The Best Python HTTP Clients For 2022](https://www.scrapingbee.com/blog/best-python-http-clients/)
