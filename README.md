@@ -38,3 +38,5 @@ _Requests_ is an elegant and simple HTTP library.
 [Selenium WebDriver – How To Test REST API](https://www.vinsguru.com/selenium-webdriver-how-to-test-rest-api/)
 
 [Requests - HTTP library for Python](https://requests.readthedocs.io/en/latest/)
+
+[REST-ASSURED WITH CUCUMBER: USING BDD FOR WEB SERVICES AUTOMATION](https://angiejones.tech/rest-assured-with-cucumber-using-bdd-for-web-services-automation/)
