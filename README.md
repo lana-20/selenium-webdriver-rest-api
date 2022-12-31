@@ -29,6 +29,125 @@ _Requests_ is an elegant and simple HTTP library.
 
 ![image](https://user-images.githubusercontent.com/70295997/209491718-81463589-bb41-41ca-af3b-f07709ee434e.png)
 
+Here is an example of how you might use the Python requests module to test a simple REST API:
+
+    import requests
+
+    # Send a GET request to the API
+    response = requests.get("http://example.com/api/users")
+
+    # Check the status code of the response
+    assert response.status_code == 200
+
+    # Parse the JSON response
+    data = response.json()
+
+    # Check the contents of the response
+    assert len(data) > 0
+    assert "id" in data[0]
+    assert "name" in data[0]
+
+    # Send a POST request to the API
+    response = requests.post("http://example.com/api/users", json={
+      "name": "Test User"
+    })
+
+    # Check the status code of the response
+    assert response.status_code == 201
+
+    # Parse the JSON response
+    data = response.json()
+
+    # Check the contents of the response
+    assert "id" in data
+    assert data["name"] == "Test User"
+
+    # Send a PUT request to the API
+    response = requests.put("http://example.com/api/users/{}".format(data["id"]), json={
+      "name": "Updated Test User"
+    })
+
+    # Check the status code of the response
+    assert response.status_code == 200
+
+    # Send a DELETE request to the API
+    response = requests.delete("http://example.com/api/users/{}".format(data["id"]))
+
+    # Check the status code of the response
+    assert response.status_code == 204
+
+This example sends a GET request to the /api/users endpoint to retrieve a list of users, a POST request to the same endpoint to create a new user, a PUT request to update the newly created user, and a DELETE request to delete the user. The requests module makes it easy to send HTTP requests and parse the response, whether it is in JSON format or some other format.
+
+Here is an example of how you might use the Python requests module and Selenium to test a simple REST API as part of a larger automated test:
+
+    from selenium import webdriver
+    import requests
+
+    # Start the webdriver and navigate to the login page
+    driver = webdriver.Chrome()
+    driver.get("http://example.com/login")
+
+    # Log in to the application
+    driver.find_element(By.ID, "username").send_keys("testuser")
+    driver.find_element(By.ID, "password").send_keys("testpass")
+    driver.find_element(By.XPATH, "//button[text()='Log in']").click()
+
+    # Send a GET request to the API
+    response = requests.get("http://example.com/api/users", headers={
+      "Authorization": "Bearer {}".format(driver.get_cookie("access_token")["value"])
+    })
+
+    # Check the status code of the response
+    assert response.status_code == 200
+
+    # Parse the JSON response
+    data = response.json()
+
+    # Check the contents of the response
+    assert len(data) > 0
+    assert "id" in data[0]
+    assert "name" in data[0]
+
+    # Send a POST request to the API
+    response = requests.post("http://example.com/api/users", headers={
+      "Authorization": "Bearer {}".format(driver.get_cookie("access_token")["value"])
+    }, json={
+      "name": "Test User"
+    })
+
+    # Check the status code of the response
+    assert response.status_code == 201
+
+    # Parse the JSON response
+    data = response.json()
+
+    # Check the contents of the response
+    assert "id" in data
+    assert data["name"] == "Test User"
+
+    # Send a PUT request to the API
+    response = requests.put("http://example.com/api/users/{}".format(data["id"]), headers={
+      "Authorization": "Bearer {}".format(driver.get_cookie("access_token")["value"])
+    }, json={
+      "name": "Updated Test User"
+    })
+
+    # Check the status code of the response
+    assert response.status_code == 200
+
+    # Send a DELETE request to the API
+    response = requests.delete("http://example.com/api/users/{}".format(data["id"]), headers={
+      "Authorization": "Bearer {}".format(driver.get_cookie("access_token")["value"])
+    })
+
+    # Check the status code of the response
+    assert response.status_code == 204
+
+    # Close the webdriver
+    driver.quit()
+
+This example uses Selenium to log in to the application and retrieve an access token from a cookie, which is then passed in the headers of the API requests as an authorization token. The requests module is used to send the GET, POST, PUT, and DELETE requests to the API, and to parse the response. This allows you to include API testing as part of a larger automated test of the application.
+
 ----
 
 [5 Best Python Libraries for working with HTTP](https://www.yeahhub.com/5-best-python-libraries-working-http/)
